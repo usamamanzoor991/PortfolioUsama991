@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: main;
+  src: url("/file.woff2");
+}
+
+html,body{
+  overflow-x: hidden;
+}
+
+#page1-in{
+  perspective: 1000px;
+  position: relative;
+}
+
+#section2{
+  perspective: 1200px;
+  position: relative;
+}
+
+.first{
+  transform-origin: 100% 100%;
+}

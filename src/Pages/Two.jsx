@@ -36,7 +36,6 @@ const Two = () => {
                     end: "Top -10%",
                     scroller: "body",
                     scrub: 1,
-                    markers: true
                 }
             })
         }

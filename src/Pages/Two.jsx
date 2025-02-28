@@ -7,31 +7,50 @@ const Two = () => {
 
     gsap.registerPlugin(ScrollTrigger);
 
+    console.log(window);
+
     useGSAP(()=>{
-        gsap.from(".first",{
-            duration: 1,
-            opacity: 0,
-            stagger: 1,
-            transform: 'rotateX(-90deg)',
-            scrollTrigger: {
-                trigger: ".first",
-                start: "Top 50%",
-                end: "Top -180%",
-                scroller: "body",
-                scrub: 1,
-            }
-        })
+        if(window.innerWidth > 768){
+            gsap.from(".first",{
+                duration: 1,
+                opacity: 0,
+                stagger: 1,
+                transform: 'rotateX(-90deg)',
+                scrollTrigger: {
+                    trigger: ".first",
+                    start: "Top 50%",
+                    end: "Top -180%",
+                    scroller: "body",
+                    scrub: 1,
+                }
+            })
+        }else{
+            gsap.from(".first",{
+                duration: 1,
+                opacity: 0,
+                stagger: 1,
+                transform: 'rotateX(-90deg)',
+                scrollTrigger: {
+                    trigger: ".first",
+                    start: "Top 64%",
+                    end: "Top -10%",
+                    scroller: "body",
+                    scrub: 1,
+                    markers: true
+                }
+            })
+        }
     })
 
   return (
-    <div id='section2' className='min-h-[100vh] w-full flex flex-col items-center mt-20'>
+    <div id='section2' className='min-h-[100vh] w-full flex flex-col items-center mt-20 '>
         <h1 id='first' style={{fontSize: '18vw'}} className='font-[main] first'>IMPACTFUL</h1>
         <h1 id='first' style={{fontSize: '18vw'}} className='font-[main] first'>DESIGN</h1>
         <h1 id='first' style={{fontSize: '18vw'}} className='font-[main] first'>IS THE</h1>
         <h1 id='first' style={{fontSize: '18vw'}} className='font-[main] first'>DESIGN</h1>
         <h1 id='first' style={{fontSize: '18vw'}} className='font-[main] first'>THAT </h1>
         <h1 id='first' style={{fontSize: '18vw'}} className='font-[main] first'>WORKS</h1>
-        <div className='flex justify-between items-center mt-20 mb-10 w-[60vw]'>
+        <div className='flex justify-between items-center mt-20 mb-10 w-[60vw] max-md:flex-wrap'>
             <img src="/Tesla.png" />
             <img src="/Figma.png" />
             <img src="/Breakpoint.png" />

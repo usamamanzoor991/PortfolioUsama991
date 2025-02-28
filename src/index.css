@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+/* Custom desktop-first breakpoints */
+@layer base {
+  @media (max-width: 1536px) {
+    .max-2xl\:hidden { display: none; }
+  }
+  @media (max-width: 1280px) {
+    .max-xl\:hidden { display: none; }
+  }
+  @media (max-width: 1024px) {
+    .max-lg\:hidden { display: none; }
+  }
+  @media (max-width: 768px) {
+    .max-md\:hidden { display: none; }
+  }
+  @media (max-width: 640px) {
+    .max-sm\:hidden { display: none; }
+  }
+}
+
 @font-face {
   font-family: main;
   src: url("/file.woff2");
